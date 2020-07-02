@@ -28,6 +28,6 @@ public class Users {
     @Column(length = 16, updatable = true, nullable = false)
     private String passwordHash;
 
-    @OneToMany(mappedBy = "table_users", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Role> roles = new ArrayList<>();
 }
