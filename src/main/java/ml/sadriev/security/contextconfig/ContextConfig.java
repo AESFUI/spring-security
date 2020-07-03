@@ -19,7 +19,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @EnableTransactionManagement
 @Configuration
-@ComponentScan("ml.sadriev.security.service")
+@ComponentScan("ml.sadriev.security")
 @EnableJpaRepositories("ml.sadriev.security.api.repository")
 @PropertySource("classpath:db-conf.properties")
 public class ContextConfig {

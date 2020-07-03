@@ -25,7 +25,7 @@ public class Users {
     @Column(length = 32, unique = true, updatable = false, nullable = false)
     private String nickName;
 
-    @Column(length = 16, updatable = true, nullable = false)
+    @Column(length = 255, updatable = true, nullable = false)
     private String passwordHash;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)

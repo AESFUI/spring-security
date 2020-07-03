@@ -8,6 +8,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class Testing {
 
+    @Resource
+    private UsersService usersService;
 
     public void start() {
 

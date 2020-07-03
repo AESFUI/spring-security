@@ -1,6 +1,7 @@
 package ml.sadriev.security.service;
 
 import java.util.Collections;
+import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
 import ml.sadriev.security.api.repository.UsersRepository;
 import ml.sadriev.security.api.service.UsersService;
@@ -12,7 +13,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-@Transactional
 public class UsersServiceImpl implements UsersService {
 
     @Resource
@@ -20,6 +20,12 @@ public class UsersServiceImpl implements UsersService {
 
     @Resource
     private PasswordEncoder passwordEncoder;
+
+    @PostConstruct
+    private void init() {
+        initUser("admin", "admin", RoleType.ADMIN);
+        initUser("user", "user", RoleType.USER);
+    }
 
     @Override
     public Users findUserByNickName(String nickName) {
@@ -38,5 +44,13 @@ public class UsersServiceImpl implements UsersService {
         user.setRoles(Collections.singletonList(role));
 
         usersRepository.save(user);
+    }
+
+    private void initUser(final String nickName, final String password, final RoleType roleType) {
+        final Users user = usersRepository.findUserByNickName(nickName);
+        if (user != null) {
+            return;
+        }
+        createUser(nickName, password, roleType);
     }
 }
