@@ -6,10 +6,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
+@PreAuthorize("hasRole('ADMIN')")
 public class AdminController {
 
     @GetMapping("/admin")
-    @PreAuthorize("hasRole('ADMIN')")
     public String admin(Model model) {
         return "admin";
     }

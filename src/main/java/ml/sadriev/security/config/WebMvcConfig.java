@@ -21,10 +21,6 @@ import org.springframework.web.servlet.view.JstlView;
 @Configuration
 public class WebMvcConfig extends WebSecurityConfigurerAdapter implements WebMvcConfigurer {
 
-    /**
-     * Add handlers to serve static resources such as images, js, and, css files from specific locations under web
-     * application root, the classpath, and others.
-     */
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/res/**")

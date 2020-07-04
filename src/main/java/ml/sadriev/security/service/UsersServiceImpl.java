@@ -49,7 +49,7 @@ public class UsersServiceImpl implements UsersService {
     }
 
     private void initUser(final String nickName, final String password, final RoleType roleType) {
-        final Users user = usersRepository.findUserByNickName(nickName);
+        final Users user = findUserByNickName(nickName);
         if (user != null) {
             return;
         }
