@@ -1,4 +1,4 @@
-package ml.sadriev.security.contextconfig;
+package ml.sadriev.security.config;
 
 import java.util.Properties;
 import javax.sql.DataSource;

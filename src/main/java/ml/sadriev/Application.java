@@ -1,7 +1,7 @@
 package ml.sadriev;
 
 import ml.sadriev.security.Testing;
-import ml.sadriev.security.contextconfig.ContextConfig;
+import ml.sadriev.security.config.ContextConfig;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
