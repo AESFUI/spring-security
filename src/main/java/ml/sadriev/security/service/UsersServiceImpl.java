@@ -25,6 +25,8 @@ public class UsersServiceImpl implements UsersService {
     private void init() {
         initUser("admin", "admin", RoleType.ADMIN);
         initUser("user", "user", RoleType.USER);
+        initUser("user2", "user2", RoleType.USER);
+        initUser("user3", "user3", RoleType.USER);
     }
 
     @Override

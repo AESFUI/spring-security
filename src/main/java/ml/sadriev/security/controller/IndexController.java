@@ -13,10 +13,5 @@ public class IndexController {
     public String index(Model model) {
         return "index";
     }
-
-/*    @RequestMapping(method = RequestMethod.GET)
-    public String free(Model model) {
-        return "free";
-    }*/
 }
 

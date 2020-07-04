@@ -1,5 +1,6 @@
 package ml.sadriev.security.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import javax.annotation.Resource;
@@ -32,7 +33,7 @@ public class UserDetailsServiceBean implements UserDetailsService {
         builder.password(user.getPasswordHash());
 
         final List<Role> userRoles = user.getRoles();
-        final List<String> roles = userRoles.stream().map(Role::toString).collect(Collectors.toList());
+        final List<String> roles = userRoles.stream().map(role -> role.getRoleEnum().toString()).collect(Collectors.toList());
 
         builder.roles(roles.toArray(new String[]{}));
         return builder.build();
