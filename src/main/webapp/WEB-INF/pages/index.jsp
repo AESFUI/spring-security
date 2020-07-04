@@ -8,15 +8,11 @@
 </head>
 <body>
 
-<h1>INDEX</h1>
+<h1>Кря</h1>
 
 <sec:authorize access="isAuthenticated()">
     <p>USER: <sec:authentication property="name"/></p>
 </sec:authorize>
-
-<p>
-    <a href="/free" target="_blank">GOTO FREE PAGE </a>
-</p>
 
 <sec:authorize access="!isAuthenticated()">
     <p>
