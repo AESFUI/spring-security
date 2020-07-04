@@ -29,5 +29,4 @@ public class Role {
     @Column
     @Enumerated(EnumType.STRING)
     private RoleType roleEnum = RoleType.ADMIN;
-
 }

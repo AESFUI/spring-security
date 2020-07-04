@@ -11,7 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import lombok.Data;
-
+import lombok.ToString;
 
 @Data
 @Entity
@@ -28,6 +28,7 @@ public class Users {
     @Column(length = 255, updatable = true, nullable = false)
     private String passwordHash;
 
+    @ToString.Exclude
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Role> roles = new ArrayList<>();
 }
